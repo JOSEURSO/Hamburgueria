@@ -194,6 +194,30 @@ document.addEventListener('keydown', function(event) {
 });
 
 document.addEventListener('contextmenu', function(event) {
+
+
+
+
+
+
+
+    const elements = document.querySelectorAll(".hidden");
+
+elements.forEach((element) => myObserve.observe(element));
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key.toLowerCase() === 'u') {
+        event.preventDefault();
+        alert('Visualização do código-fonte desativada!');
+    }
+});
+
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    alert('Clique direito desativado!');
+});
+   
     event.preventDefault();
     alert('Clique direito desativado!');
 });
